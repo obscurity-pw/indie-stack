@@ -1,3 +1,4 @@
+---
 # https://www.gitpod.io/docs/config-gitpod-file
 
 image:
@@ -46,3 +47,4 @@ vscode:
     - esbenp.prettier-vscode
     - dbaeumer.vscode-eslint
     - bradlc.vscode-tailwindcss
+    - ms-vscode.live-server

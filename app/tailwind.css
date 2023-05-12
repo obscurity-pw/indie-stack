@@ -1,3 +1,42 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono');
+body {
+  font-family: 'roboto mono', monospace;
+}
+h1 {
+  font-family: 'roboto mono', monospace;
+  font-size: 40px;
+  color: rgb(220,220,220);
+}
+p {
+ color: rgb(220,220,220); 
+}
+#Footer {
+    white-space: nowrap;
+    text-align: center;
+    clear: both; /*may be omitted*/
+    position: absolute;
+    bottom: 5px; 
+    width: 100%;
+    display: block;
+}
+ #link_Styles { 
+  font-size: 14px;
+  color: #a020f0;
+}
+#link_Styles:hover {
+  text-decoration: underline;
+}
+#label_Styles {
+  color: #616C77;
+}
+.obscurity-purple {
+  color: #a020f0;
+}
+.border-obscurity-purple {
+  --tw-border-opacity: 1;
+  color: #a020f0;
+}
+

@@ -45,7 +45,7 @@ export const action = async ({ request }: ActionArgs) => {
     return json(
       {
         errors: {
-          email: "A user already exists with this email",
+          email: "This email is already in use!",
           password: null,
         },
       },
@@ -63,7 +63,7 @@ export const action = async ({ request }: ActionArgs) => {
   });
 };
 
-export const meta: V2_MetaFunction = () => [{ title: "Sign Up" }];
+export const meta: V2_MetaFunction = () => [{ title: "register - obscurity" }];
 
 export default function Join() {
   const [searchParams] = useSearchParams();
@@ -81,28 +81,28 @@ export default function Join() {
   }, [actionData]);
 
   return (
-    <div className="flex min-h-full flex-col justify-center">
+    <div className="flex min-h-full bg-black flex-col justify-center">
       <div className="mx-auto w-full max-w-md px-8">
         <Form method="post" className="space-y-6">
           <div>
-            <label
+            <label id="label_Styles"
               htmlFor="email"
               className="block text-sm font-medium text-gray-700"
             >
-              Email address
+              email address
             </label>
             <div className="mt-1">
               <input
                 ref={emailRef}
                 id="email"
                 required
-                autoFocus={true}
+                autoFocus={false}
                 name="email"
                 type="email"
                 autoComplete="email"
                 aria-invalid={actionData?.errors?.email ? true : undefined}
                 aria-describedby="email-error"
-                className="w-full rounded border border-gray-500 px-2 py-1 text-lg"
+                className="w-full rounded border bg-black border-purple-500 px-2 py-1 text-lg"
               />
               {actionData?.errors?.email ? (
                 <div className="pt-1 text-red-700" id="email-error">
@@ -113,11 +113,11 @@ export default function Join() {
           </div>
 
           <div>
-            <label
+            <label id="label_Styles"
               htmlFor="password"
               className="block text-sm font-medium text-gray-700"
             >
-              Password
+              password
             </label>
             <div className="mt-1">
               <input
@@ -128,7 +128,7 @@ export default function Join() {
                 autoComplete="new-password"
                 aria-invalid={actionData?.errors?.password ? true : undefined}
                 aria-describedby="password-error"
-                className="w-full rounded border border-gray-500 px-2 py-1 text-lg"
+                className="w-full rounded border bg-black border-purple-500 px-2 py-1 text-lg"
               />
               {actionData?.errors?.password ? (
                 <div className="pt-1 text-red-700" id="password-error">
@@ -141,13 +141,13 @@ export default function Join() {
           <input type="hidden" name="redirectTo" value={redirectTo} />
           <button
             type="submit"
-            className="w-full rounded bg-blue-500 px-4 py-2 text-white hover:bg-blue-600 focus:bg-blue-400"
+            className="w-full rounded border border-purple-500 bg-black px-4 py-2 text-white hover:bg-purple-500 hover:text-black focus:bg-purple-500"
           >
-            Create Account
+            submit
           </button>
           <div className="flex items-center justify-center">
             <div className="text-center text-sm text-gray-500">
-              Already have an account?{" "}
+              already have an account?{" "}
               <Link
                 className="text-blue-500 underline"
                 to={{
@@ -155,7 +155,7 @@ export default function Join() {
                   search: searchParams.toString(),
                 }}
               >
-                Log in
+                log in
               </Link>
             </div>
           </div>
