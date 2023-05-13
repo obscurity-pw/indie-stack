@@ -1,7 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono');
 body {
   font-family: 'roboto mono', monospace;
 }
@@ -10,7 +10,7 @@ h1 {
   font-size: 40px;
   color: rgb(220,220,220);
 }
-p {
+a {
  color: rgb(220,220,220); 
 }
 #Footer {
@@ -18,13 +18,14 @@ p {
     text-align: center;
     clear: both; /*may be omitted*/
     position: absolute;
-    bottom: 5px; 
+    bottom: 6px; 
     width: 100%;
     display: block;
 }
  #link_Styles { 
   font-size: 14px;
   color: #a020f0;
+  padding: 0px;
 }
 #link_Styles:hover {
   text-decoration: underline;
@@ -40,3 +41,30 @@ p {
   color: #a020f0;
 }
 
+.container {
+  min-height: inherit;
+}
+
+.container,
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.content {
+  padding: 1rem;
+  background-color: #1a1a1a;
+  border-radius: 5px;
+  box-shadow: 0 0.2rem 1rem rgba(0, 0, 0, 0.5);
+  width: 400px;
+  max-width: 100%;
+}
+
+@media print, (min-width: 640px) {
+  .content {
+    padding: 2rem;
+    border-radius: 8px;
+  }
+}

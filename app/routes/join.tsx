@@ -83,26 +83,25 @@ export default function Join() {
   return (
     <div className="flex min-h-full bg-black flex-col justify-center">
       <div className="mx-auto w-full max-w-md px-8">
+      <div className="h-2 bg-purple-500 rounded-t-md"></div>
+      <div className="container">
+      <div className="content" data-light="">
+        <h1 className="pb-4">OBSCURITY</h1>
         <Form method="post" className="space-y-6">
           <div>
-            <label id="label_Styles"
-              htmlFor="email"
-              className="block text-sm font-medium text-gray-700"
-            >
-              email address
-            </label>
             <div className="mt-1">
               <input
                 ref={emailRef}
                 id="email"
                 required
                 autoFocus={false}
+                placeholder="username"
                 name="email"
                 type="email"
                 autoComplete="email"
                 aria-invalid={actionData?.errors?.email ? true : undefined}
                 aria-describedby="email-error"
-                className="w-full rounded border bg-black border-purple-500 px-2 py-1 text-lg"
+                className="w-full border border-purple-500 px-2 focus:border-purple-500 placeholder:text-sm bg-black text-white active:border-purple-500 py-1 text-lg"
               />
               {actionData?.errors?.email ? (
                 <div className="pt-1 text-red-700" id="email-error">
@@ -111,24 +110,18 @@ export default function Join() {
               ) : null}
             </div>
           </div>
-
           <div>
-            <label id="label_Styles"
-              htmlFor="password"
-              className="block text-sm font-medium text-gray-700"
-            >
-              password
-            </label>
             <div className="mt-1">
               <input
                 id="password"
                 ref={passwordRef}
+                placeholder="password"
                 name="password"
                 type="password"
                 autoComplete="new-password"
                 aria-invalid={actionData?.errors?.password ? true : undefined}
                 aria-describedby="password-error"
-                className="w-full rounded border bg-black border-purple-500 px-2 py-1 text-lg"
+                className="w-full border border-purple-500 px-2 bg-black placeholder:text-sm text-white focus:border-purple-500 py-1 text-lg"
               />
               {actionData?.errors?.password ? (
                 <div className="pt-1 text-red-700" id="password-error">
@@ -137,7 +130,26 @@ export default function Join() {
               ) : null}
             </div>
           </div>
-
+         
+          <div>
+            <div className="mt-1">
+              <input
+                id="invCode"
+                ref={passwordRef}
+                placeholder="invite code"
+                name="invCode"
+                type="text"
+                aria-invalid={actionData?.errors?.password ? true : undefined}
+                aria-describedby="invite-error"
+                className="w-full border border-purple-500 px-2 bg-black placeholder:text-sm text-white focus:border-purple-500 py-1 text-lg"
+              />
+              {actionData?.errors?.password ? (
+                <div className="pt-1 text-red-700" id="invite-error">
+                  {actionData.errors.password}
+                </div>
+              ) : null}
+            </div>
+          </div>
           <input type="hidden" name="redirectTo" value={redirectTo} />
           <button
             type="submit"
@@ -161,6 +173,8 @@ export default function Join() {
           </div>
         </Form>
       </div>
+    </div>
+    </div>
     </div>
   );
 }

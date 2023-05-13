@@ -41,7 +41,7 @@ export default function Index() {
         >
           login 
         </Link>
-        <p>  /  </p>
+       <a> / </a>
         <Link id="link_Styles"
           to="/join"
         >

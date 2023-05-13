@@ -78,26 +78,25 @@ export default function LoginPage() {
   return (
     <div className="flex min-h-full bg-black flex-col justify-center">
       <div className="mx-auto w-full max-w-md px-8">
+      <div className="h-2 bg-purple-500 rounded-t-md"></div>
+      <div className="container">
+      <div className="content" data-light="">
+        <h1 className="pb-4">OBSCURITY</h1>
         <Form method="post" className="space-y-6">
           <div>
-            <label id="label_Styles"
-              htmlFor="email"
-              className="block text-sm font-medium text-gray-700"
-            >
-              email adress
-            </label>
             <div className="mt-1">
               <input
                 ref={emailRef}
                 id="email"
                 required
                 autoFocus={false}
+                placeholder="username"
                 name="email"
                 type="email"
                 autoComplete="email"
                 aria-invalid={actionData?.errors?.email ? true : undefined}
                 aria-describedby="email-error"
-                className="w-full rounded border border-purple-500 px-2 bg-black focus:border-purple-500 py-1 text-lg"
+                className="w-full border border-purple-500 px-2 focus:border-purple-500 placeholder:text-sm bg-black text-white active:border-purple-500 py-1 text-lg"
               />
               {actionData?.errors?.email ? (
                 <div className="pt-1 text-red-700" id="email-error">
@@ -108,22 +107,17 @@ export default function LoginPage() {
           </div>
 
           <div>
-            <label id="label_Styles"
-              htmlFor="password"
-              className="block text-sm font-medium text-gray-700"
-            >
-              password
-            </label>
             <div className="mt-1">
               <input
                 id="password"
                 ref={passwordRef}
+                placeholder="password"
                 name="password"
                 type="password"
                 autoComplete="current-password"
                 aria-invalid={actionData?.errors?.password ? true : undefined}
                 aria-describedby="password-error"
-                className="w-full rounded border border-purple-500 px-2 bg-black focus:border-purple-500 py-1 text-lg"
+                className="w-full border border-purple-500 px-2 bg-black placeholder:text-sm text-white focus:border-purple-500 py-1 text-lg"
               />
               {actionData?.errors?.password ? (
                 <div className="pt-1 text-red-700" id="password-error">
@@ -136,25 +130,11 @@ export default function LoginPage() {
           <input type="hidden" name="redirectTo" value={redirectTo} />
           <button
             type="submit"
-            className="w-full rounded border border-purple-500 bg-black px-4 py-2 text-white hover:bg-purple-500 hover:text-black focus:bg-purple-500"
+            className="w-full border border-purple-500 bg-black px-4 py-2 text-white hover:bg-purple-500 hover:text-black focus:bg-purple-500"
           >
             submit
           </button>
           <div className="flex items-center justify-between">
-            <div className="flex items-center">
-              <input
-                id="remember"
-                name="remember"
-                type="checkbox"
-                className="h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500"
-              />
-              <label id="label_Styles"
-                htmlFor="remember"
-                className="ml-2 block text-sm text-gray-900"
-              >
-                remember me
-              </label>
-            </div>
             <div className="text-center text-sm text-gray-500">
               don't have an account?{" "}
               <Link
@@ -164,12 +144,22 @@ export default function LoginPage() {
                   search: searchParams.toString(),
                 }}
               >
-                sign up
+                join
               </Link>
             </div>
           </div>
         </Form>
+        <div id="Footer">
+        <Link id="link_Styles"
+          to="/"
+        >
+          home 
+        </Link>
+      </div>
       </div>
     </div>
+    </div>
+    </div>
+    
   );
 }
