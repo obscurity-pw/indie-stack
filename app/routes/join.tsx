@@ -95,7 +95,7 @@ export default function Join() {
                 id="email"
                 required
                 autoFocus={false}
-                placeholder="username"
+                placeholder="email adress"
                 name="email"
                 type="email"
                 autoComplete="email"

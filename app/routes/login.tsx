@@ -90,7 +90,7 @@ export default function LoginPage() {
                 id="email"
                 required
                 autoFocus={false}
-                placeholder="username"
+                placeholder="email adress"
                 name="email"
                 type="email"
                 autoComplete="email"
